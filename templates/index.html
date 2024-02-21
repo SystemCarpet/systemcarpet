@@ -1,0 +1,354 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--meta tags-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--styles
+    https://watercss.kognise.dev
+    https://tailwindcss.com/docs/installation
+    -->
+  <link rel="stylesheet" href="{% static 'css/tailwindcompiled.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <!--js-->
+  <script src="https://kit.fontawesome.com/c0aadc9be8.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!--SEO-->
+  <title>Document</title>
+  <!-- utils
+      https://moqups.com/es/templates/wireframes-mockups/ecommerce-wireframe/
+  -->
+</head>
+
+<body>
+  <div class="min-h-screen bg-gray-100">
+    <div class="relative max-w-full">
+      <header class="absolute z-10 flex w-full items-center justify-center bg-transparent">
+        <nav class="m-2 w-full">
+          <div class="flex items-center font-mono" role="navigation">
+            <a href="dashboard.html" class="mx-4 hidden w-1/5 lg:inline-block">
+              <div class="flex">
+                <img src="assets/imgs/AUTOCARPETS_LOGO_BLANCO.png" alt="" class="my-0" />
+              </div>
+            </a>
+            <div class="flex grow">
+              <input type="text" placeholder="¿Que estas buscando?"
+                class="w-full rounded-r-none font-sans focus:ring-0" />
+              <button class="relative flex items-center rounded-l-none uppercase focus:ring-0" type="button">
+                <span class="fas fa-search"></span>
+              </button>
+            </div>
+            <div class="ml-4 cursor-pointer md:hidden">
+              <span class="fas fa-bars text-4xl text-white"></span>
+            </div>
+            <div class="hidden grow md:block">
+              <ul class="flex items-center justify-evenly">
+                <li class="mx-1">
+                  <a class="text-white " href="#">Contáctenos</a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-white " href="products.html">Productos</a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-white " href="#">Personalización</a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-white " href="login.html">Ingresar</a>
+                </li>
+                <li class="">
+                  <a href="cart.html" class="text-white">
+                    compras
+                    <span class="fa-solid fa-cart-shopping"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <main>
+      <section class="relative bg-white bg-cover bg-no-repeat lg:h-[640px]" style="
+            background-image: url(assets/imgs/banners_autocarpet_tapetesgeneralMesa-de-trabajo-1-1100x519.png);
+          ">
+        <div class="">
+          <div class="flex h-2/3 items-center justify-center px-4 py-16">
+            <div class="m-2">
+              <h1 class="text-right text-6xl font-black leading-normal text-white">
+                <span class="bg-zinc-950">
+                  Encuentre el <span class="fancy">tapete</span>
+                   que desea y si no lo encuentra, se lo <span class="fancy">hacemos.</span>
+              </h1>
+            </div>
+            <lottie-player class="hidden xl:block" src="assets/animations/json/animation_ll8hu3ps.json"
+              background="Transparent" speed=" 1" style="width: 500px; height: 500px" direction="1" mode="bounce" loop
+              autoplay></lottie-player>
+            <div class="hidden lg:col-span-5 lg:mt-0 lg:flex"></div>
+          </div>
+          <div class="custom-shape-divider-bottom-1691879068 hidden lg:block">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+              preserveAspectRatio="none">
+              <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill fill-gray-100"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="w-10/12 mx-auto">
+        <h2 class="text-center text-3xl text-black m-8">Busca el tapete perfecto para ti</h2>
+        <form action="" class="flex">
+          <select name="" id="" class="w-full">
+            <option value="" class="">Marca</option>
+          </select>
+          <select name="" id="" class="w-full">
+            <option value="" class="">Modelo</option>
+            <option value="" class=""></option>
+          </select>
+          <select name="" id="" class="w-full">
+            <option value="" class="">Material</option>
+            <option value="" class=""></option>
+          </select>
+          <button>buscar</button>
+        </form>
+        
+      </section>
+      <br>
+      <section>
+        
+        <div class="w-10/12 mx-auto">
+          
+          <div class="grid grid-cols-3">
+            <!-- COMPONENT
+            <div class="flex justify-end">
+
+              <div class=" flex flex-col w-3/4 rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/clipboard-image-3.png" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 h-24 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-gray-900">
+                      Tapetes Para Carro En PVC
+                    </h4>
+                  </a>
+                  <div class=" flex items-center">
+                    <img src="assets/svg/star-svgrepo-com.svg" class="w-4" alt="" />
+                    <img src="assets/svg/star-svgrepo-com.svg" class="w-4" alt="" />
+                    <img src="assets/svg/star-svgrepo-com.svg" class="w-4" alt="" />
+                    <img src="assets/svg/star-svgrepo-com.svg" class="w-4" alt="" />
+                    <img src="assets/svg/star-svgrepo-com.svg" class="w-4" alt="" />
+                    <span
+                      class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">5.0</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class=" font-bold">$320.000</span>
+                      <span class="text-green-400">55%</span>
+                    </div>
+
+                    <a href="#"
+                      class="rounded-lg p-2 bg-blue-700 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                      to cart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            -->
+            <div class="flex justify-center col-start-1 col-end-4 md:justify-end md:col-start-1 md:col-end-2">
+              
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/premium-uno.png" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes para vehiculo <span class="text-blue-700"> premium one</span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center col-start-1 col-end-4  md:col-start-2 md:col-end-3">
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/tapete_carro-deluxe-1-510x510-1.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes para vehiculo en alfombra <span class="text-blue-700">Deluxe</span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center col-start-1 col-end-4  md:col-start-3 md:col-end-4 md:justify-start">
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/pvc_ultramat.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes <span class="text-blue-700">Ultramat</span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center col-start-1 col-end-4  md:col-start-1 md:col-end-2 md:justify-end">
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/pvc_ironmat.png" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes para vehiculo en <span class="text-blue-700">PVC</span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center col-start-1 col-end-4  md:col-start-2 md:col-end-3 ">
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/viper.png" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes en alfombra <span class="text-blue-700">Viper</span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center col-start-1 col-end-4  md:col-start-3 md:col-end-4 md:justify-start">
+              <div class=" flex flex-col w-3/4 h-min rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1 my-4">
+                <a href="#!" class="">
+                  <img class="rounded-t-lg" src="assets/imgs/tapetes-termoformados-550x550.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+                <div class="flex flex-col m-4 justify-evenly">
+                  <a href="product_detail.html">
+                    <h4 class=" font-semibold text-blue-900 text-2xl md:text-lg">
+                      Tapetes <span class="text-blue-700">Termoformados </span>
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-center  text-blue-900  md:text-2xl text-2xl">Galeria</h2>
+        <div class="w-10/12 mx-auto">
+          <div class="grid grid-cols-4">
+
+            <div class="flex  col-span-1  justify-center">
+              <div class=" w-3/4 my-4 shadow-lg">
+                <a href="#!" class="">
+                  <img class="rounded-lg" src="assets/imgs/tapetes-baul-ultramat.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+              </div>
+            </div>
+
+            <div class="flex col-span-1 justify-center">
+              <div class="w-3/4 my-4 shadow-lg  ">
+                <a href="#!" class="">
+                  <img class="rounded-lg" src="assets/imgs/tapetes-premium-one-bmw-z4.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+              </div>
+            </div>
+
+            <div class="flex col-span-1 justify-center">
+              <div class=" w-3/4 my-4 shadow-lg  ">
+                <a href="#!" class="">
+                  <img class="rounded-lg" src="assets/imgs/tapetes-carros-mercedes-a200.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+              </div>
+            </div>
+
+            <div class="flex col-span-1 justify-center">
+              <div class=" w-3/4 my-4 shadow-lg  ">
+                <a href="#!" class="">
+                  <img class="rounded-lg" src="assets/imgs/WhatsApp-Image-2020-10-19-at-8.48.47-PM.jpeg" alt="Hollywood Sign on The Hill" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <br />
+    <footer class="p-4">
+      <div class="mx-auto sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div>
+            <img src="assets/imgs/autocarpet_logo.png" class="mr-5 h-6 sm:h-9" alt="logo" />
+            <p class="">
+              Autocarpet es una empesa dedicada a la fabricacion y
+              distribucion de accesorios automotricez especialmente tapetes
+              sobre medidas para carros - kit de carretera - techos
+              corredizos.
+            </p>
+            <div class="flex">
+              <a class="" href target="_blank" rel="noreferrer">
+                <span class="sr-only"> Facebook </span>
+                <img src="assets/svg/icons8-facebook.svg" alt="" />
+              </a>
+              <a class="" href target="_blank" rel="noreferrer">
+                <span class="sr-only"> Instagram </span>
+                <img src="assets/svg/icons8-instagram.svg" alt="" />
+              </a>
+              <a class="" href target="_blank" rel="noreferrer">
+                <span class="sr-only"> YouTube </span>
+                <img src="{% static 'images/svg/YouTube-Icon-Full-Color-Logo.wine.svg' %}" alt="" class="" />
+              </a>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3">
+            <div>
+              <p class="">Productos</p>
+              <nav class="flex flex-col">
+                <a class="uppercase" href> Tapetes perzonalizados</a>
+                <a class="uppercase" href> Kits de carretera </a>
+              </nav>
+            </div>
+            <div>
+              <p class="">Servicios</p>
+              <nav class="flex flex-col">
+                <a class="uppercase" href>
+                  PELÍCULAS DE SEGURIDAD Y POLARIZADO
+                </a>
+                <a class="uppercase" href> TAPIZADO DE TIMÓN </a>
+                <a class="uppercase" href> VIDEO </a>
+              </nav>
+            </div>
+            <div>
+              <p class="">Nosotros</p>
+              <nav class="flex flex-col">
+                <a href="" class="uppercase">
+                  <p>Calle 79 No 69 P-55 Bogotá Colombia.</p>
+                </a>
+                <p>
+                  3504752252 – 3162240257 – 3204429508–3219265889 – 3123693622
+                  – 3184433134 – 3226334993 – 3160185066 – 3228087417
+                </p>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <p class="">© 2023 Autocarpet, Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
