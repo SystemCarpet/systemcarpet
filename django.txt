@@ -1,0 +1,13 @@
+mkdir systemcarpet_env
+cd systemcarpet_env
+python -m venv env
+.\env\Scripts\activate
+python.exe -m pip install --upgrade pip
+pip install django
+pip freeze > systemcarpet/requirements.txt
+python -m pip install -r systemcarpet/requirements.txt
+django-admin startproject systemcarpet
+python -m pip install pymysql
+python -m pip install "psycopg[binary]"
+python .\systemcarpet\systemcarpet\manage.py runserver
+python manage.py inspectdb > .\coreapp\models.py
