@@ -1,0 +1,195 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--styles
+      https://watercss.kognise.dev
+      https://tailwindcss.com/docs/installation
+      -->
+    <link rel="stylesheet" href="{% static 'css/tailwindcompiled.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <!--js-->
+    <script src="https://kit.fontawesome.com/c0aadc9be8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!--SEO-->
+    <title>Document</title>
+    <!-- utils
+        https://moqups.com/es/templates/wireframes-mockups/ecommerce-wireframe/
+    -->
+  </head>
+  <body>
+    <div class="min-h-screen bg-gray-100"> 
+      <header
+        class="sticky top-0 flex items-center justify-center bg-white shadow-[0_4px_9px_-4px_#cbcbcb]"
+      >
+        <nav class="m-2 w-full">
+          <div class="flex items-center font-mono" role="navigation">
+            <a href="{% url 'index' %}" class="mx-4 hidden w-1/5 lg:inline-block">
+              <div class="flex">
+                <img
+                  src="{% static 'images/imgs/autocarpet_logo.png' %}"
+                  alt=""
+                  class="my-0"
+                />
+              </div>
+            </a>
+            <div class="flex grow">
+              <input
+                type="text"
+                placeholder="¿Que estas buscando?"
+                class="w-full rounded-r-none font-sans focus:ring-0"
+              />
+              <button
+                class="relative flex items-center rounded-l-none uppercase focus:ring-0"
+                type="button"
+              >
+                <span class="fas fa-search"></span>
+              </button>
+            </div>
+            <div class="ml-4 cursor-pointer md:hidden">
+              <span class="fas fa-bars text-4xl"></span>
+            </div>
+            <div class="hidden grow md:block">
+              <ul class="flex items-center justify-evenly">
+                <li class="mx-1"><a href="#">Nosotros</a></li>
+                <li class="mx-1"><a href="#">Personalización</a></li>
+                <li class="mx-1"><a href="login.html">Log In</a></li>
+                <li class="mx-1">
+                  <a href="cart.html" class="">
+                    compras
+                    <span class="fa-solid fa-cart-shopping"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+<main class="m-10">
+        <section>
+          <div class="w-10/12 mx-auto">
+            <div class="grid grid-cols-3">
+              <!-- COMPONENT-->
+              <div class="flex justify-end">
+  
+                <div class=" flex flex-col w-3/4 rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1">
+                  <a href="#!" class="">
+                    <img class="rounded-t-lg" src="{% static 'images/imgs/tapetes-baul-ultramat.jpeg' %}" alt="Hollywood Sign on The Hill" />
+                  </a>
+                  <div class="flex flex-col m-4 h-24 justify-evenly">
+                    <a href="product_detail.html">
+                      <h4 class=" font-semibold text-gray-900">
+                        Tapetes Para Carro En PVC
+                      </h4>
+                    </a>
+                    <div class=" flex items-center">
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <span
+                        class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span class=" font-bold">$320.000</span>
+                        <span class="text-green-400">55%</span>
+                      </div>
+  
+                      <a href="#"
+                        class="rounded-lg p-2 bg-blue-700 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                        to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex justify-center">
+  
+                <div class=" flex flex-col w-3/4 rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1">
+                  <a href="#!" class="">
+                    <img class="rounded-t-lg" src="{% static 'images/imgs/pvc_ultramat.jpeg' %}" alt="Hollywood Sign on The Hill" />
+                  </a>
+                  <div class="flex flex-col m-4 h-24 justify-evenly">
+                    <a href="product_detail.html">
+                      <h4 class=" font-semibold text-gray-900">
+                        Tapetes Para Carro En PVC
+                      </h4>
+                    </a>
+                    <div class=" flex items-center">
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <span
+                        class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span class=" font-bold">$320.000</span>
+                        <span class="text-green-400">55%</span>
+                      </div>
+  
+                      <a href="#"
+                        class="rounded-lg p-2 bg-blue-700 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                        to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex justify-start">
+  
+                <div class=" flex flex-col w-3/4 rounded-lg bg-white shadow-lg hover:bg-slate-100 col-span-1">
+                  <a href="#!" class="">
+                    <img class="rounded-t-lg" src="{% static 'images/imgs/clipboard-image-3.png' %}" alt="Hollywood Sign on The Hill" />
+                  </a>
+                  <div class="flex flex-col m-4 h-24 justify-evenly">
+                    <a href="product_detail.html">
+                      <h4 class=" font-semibold text-gray-900">
+                        Tapetes Para Carro En PVC
+                      </h4>
+                    </a>
+                    <div class=" flex items-center">
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <img src="{% static 'images/svg/star-svgrepo-com.svg' %}" class="w-4" alt="" />
+                      <span
+                        class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span class=" font-bold">$320.000</span>
+                        <span class="text-green-400">55%</span>
+                      </div>
+  
+                      <a href="#"
+                        class="rounded-lg p-2 bg-blue-700 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                        to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </section>
+      </main>
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

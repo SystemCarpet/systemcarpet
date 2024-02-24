@@ -1,0 +1,369 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--styles
+      https://watercss.kognise.dev
+      https://tailwindcss.com/docs/installation
+      -->
+
+    <link rel="stylesheet" href="{% static 'css/tailwindcompiled.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--js-->
+    <script src="https://kit.fontawesome.com/c0aadc9be8.js" crossorigin="anonymous"></script>
+    <!--SEO-->
+    <title>Document</title>
+  </head>
+
+
+<header class=" top-0 flex items-center justify-center bg-white fixed">
+  <nav class="w-full p-4 md:container md:mx-auto">
+    <div class="justify-evenly flex lg:items-center lg:justify-between">
+      <div>
+        <i class="fas fa-bars" id="btn_menu"></i>
+      </div>
+      <a href="{% url 'dashboard' %}" class=" flex justify-evenly">
+        <div class="w-60 hidden md:block">
+          <img class="" src="{% static 'images/imgs/autocarpet_logo.png' %}" alt="">
+        </div>
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<body class="bg-white">
+  <div>  
+  <div class="min-h-screen bg-gray-300 fixed sidebar" id="sidebar">
+    <div id="backMenu"></div>
+    <div class="" >
+      <main>
+        <div>
+          <div class="flex items-start justify-start bg-gray-100 ">
+            <div class="flex w-full max-w-xs bg-white p-4 h-screen">
+              <ul class="flex w-full flex-col">
+                <li class="my-px">
+                  <a href="#" class="flex h-12 flex-row items-center rounded-lg bg-gray-100 px-4 text-gray-600">
+                    <span class="flex items-center justify-center text-lg text-gray-400 fa-solid fa-house-chimney-user">
+                    </span>
+                    <span class="ml-3">Ordenes</span>
+                    <span
+                      class="ml-auto flex h-6 items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-semibold text-gray-500">3</span>
+                  </a>
+                </li>
+                <li class="my-px">
+                  <span class="my-4 flex px-4 text-sm font-medium uppercase text-gray-400">Gestionar</span>
+                </li>
+                <li class="my-px">
+                  <a href="#" class="flex h-12 flex-row items-center rounded-lg px-4 text-gray-600 hover:bg-gray-100">
+                    <span class="flex items-center justify-center text-lg text-gray-400">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <span class="ml-3">Buscar</span>
+                  </a>
+                </li>
+                <li class="my-px">
+                  <a href="#" class=" flex h-12 flex-row items-center rounded-lg px-4 text-gray-600 hover:bg-gray-100 btn_AG">
+                    <span class="flex items-center justify-center text-lg text-green-400 btn_AG">
+                      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 btn_AG">
+                        <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z btn_AG"></path>
+                      </svg>
+                    </span>
+                    <span class="ml-3 btn_AG">Crear</span>
+                  </a>
+                </li>
+                <li class="my-px">
+                  <span class="my-4 flex px-4 text-sm font-medium uppercase text-gray-400">Cuenta</span>
+                </li>
+
+                <li class="my-px">
+                  <a href="#" class="flex h-12 flex-row items-center rounded-lg px-4 text-gray-600 hover:bg-gray-100">
+                    <span class="flex items-center justify-center text-lg text-gray-400">
+                      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path
+                          d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                        </path>
+                      </svg>
+                    </span>
+                    <span class="ml-3">Notificaciones</span>
+                    <span
+                      class="ml-auto flex h-6 items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-semibold text-gray-500">10</span>
+                  </a>
+                </li>
+                <li class="my-px">
+                  <a href="#" class="flex h-12 flex-row items-center rounded-lg px-4 text-gray-600 hover:bg-gray-100">
+                    <span class="flex items-center justify-center text-lg text-red-400">
+                      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path
+                          d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z">
+                        </path>
+                      </svg>
+                    </span>
+                    <span class="ml-3">Salir</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    </main>
+  </div>
+</div>
+  <div class="botones1 bg-white da rk:bg-gray-800 rounded-lg shadow-lg p-6 mb-6 ">
+      <p class="text-2xl font-black">Ordenes de materiales</p>
+      <br>     
+      <div class="flex justify-between mb-3">
+        <div class="inline-flex">
+          <input type="text" class="bBuscar mb-3 leading-5" name="bBuscar" id="bBuscar" placeholder="Buscar">
+          <a href="#"><i class="fa-solid fa-magnifying-glass icono1"></i></a>
+        </div>
+        <a href="#" class=" py-2 px-4 inline-block text-center mb-3 rounded leading-5 text-gray-50 bg-green-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0 btn_AG">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="inline-block ltr:mr-2 rtl:ml-2 bi bi-plus-lg" viewBox="0 0 16 16">
+            <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z btn_GA"></path>
+          </svg>Agregar
+        </a>    
+      </div>
+      
+      <div class="hidden-header hidden-sort-after tabla1">
+          <table class="table-sorter table-bordered-bottom w-full text-sm ltr:text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead>
+            <tr class="bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
+              <th>
+                Proveedor
+              </th>
+              <th>
+                Materiares
+              </th>
+              <th>
+                Cantidad
+              </th>
+              <th>
+                Precio
+              </th>
+              <th>
+                Fecha de entrega
+              </th>
+              <th class="">
+                Editar
+              </th>
+              <th class="">
+                Eliminar
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Proveedor 1</td>
+              <td>Material 1...</td>
+              <td>136</td>
+              <td>121</td>
+              <td>xx/xx/xxxx</td>
+              <td class="">
+                <a href="#" class="btn_ES ">
+                    <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+              </td>
+            <td class="">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+          </td>
+            </tr>
+            <tr>
+              <td>Proveedor 2</td>
+              <td>Material 2...</td>
+              <td>132</td>
+              <td>98</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+              </td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES ">
+                  <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+                </a>
+            </td>
+            </tr>
+            <tr>
+              <td>Proveedor 3</td>
+              <td>Material 3...</td>
+              <td>92</td>
+              <td>87</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+              </td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES ">
+                  <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Proveedor 4</td>
+              <td>Material 4...</td>
+              <td>82</td>
+              <td>83</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+            </td>
+            <td class="botonOculto">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+            </td>
+            </tr>
+            <tr>
+              <td>Proveedor 5</td>
+              <td>Material 5...</td>
+              <td>90</td>
+              <td>72</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+            </td>
+            <td class="botonOculto">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+          </td>
+            </tr>
+            <tr>
+              <td>Proveedor 6</td>
+              <td>Material 6...</td>
+              <td>72</td>
+              <td>81</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+            </td>
+            <td class="botonOculto">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+          </td>
+            </tr>
+            <tr>
+              <td>Proveedor 7</td>
+              <td>Material 7...</td>
+              <td>62</td>
+              <td>77</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+            </td>
+            <td class="botonOculto">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+          </td>
+            </tr>
+            <tr>
+              <td>Proveedor 8</td>
+              <td>Material 8...</td>
+              <td>52</td>
+              <td>57</td>
+              <td>xx/xx/xxxx</td>
+              <td class="botonOculto">
+                <a href="#" class="btn_ES">
+                  <i class=" text-gray-500 fas fa-edit btn_CA"></i>
+                </a>
+            </td>
+            <td class="">
+              <a href="#" class="btn_ES ">
+                <i class="text-gray-500 fa-solid fa-trash-can btn_D"></i>
+              </a>
+            </td>
+            </tr>          
+          </tbody>
+        </table>
+        <br>
+      <div class="text-center">
+        <ul class="pagination">
+          <li><a href="#">«</a></li>
+          <li><a class="active" href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">»</a></li>
+        </ul>
+      </div>
+    <section class="modal ">
+      <div class="modal__container">
+              <form action="">
+                  <span class="">
+                  <p>Proveedor: .....</p>
+                  </span>
+                  <label for="">materiales</label>
+                  <input type="text" class="Mmateriales" id="Mmateriales" placeholder="Materiales" required>
+                  <label for="">Cantidad </label>
+                  <input type="number" class="C_materiales" id="C_materiales" placeholder="Cantidad de materiales" required>
+                  <label for="">Fecha de entrega</label>
+                  <input type="date" class="F_entrega" id="F_entrega" required>
+                  <br>
+                  <a href="#" class="modal__close">Cancelar</a>
+                  <a href="#" class="modal__close1">Guardar</a>
+              </form>
+      </div>
+  </section>
+
+  
+  <section class="modalE">
+      <div class="modal__container2">
+          <h3>Advertencia</h3>
+          <p>Estas seguro de que quieres eliminar el registro?</p>
+          <a href="#" class="modalE__close1">Cancelar</a>
+          <a href="#" class="modalE__close">Eliminar</a>
+      </div>
+  </section>
+  
+  <section class="modalA">
+      <div class="modal__container3">
+        <form action="">
+        <label for="">Proveedores</label>
+        <select id="proveedor" name="Proveedor" required >
+          <option value="Proveerdor 1">Proveedor 1</option>
+          <option value="Proveerdor 2">Proveedor 2</option>
+          <option value="Proveerdor 3">Proveedor 3</option>
+          <option value="Proveerdor 4">Proveedor 4</option>
+        </select>
+        <label for="">Materiales</label>
+        <input type="text" id="materiales" name="materiales" placeholder="materiales" required>
+        <label for="">Cantidad</label>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad" required>
+        <label for="">Fecha de entrega</label>
+        <input type="date" id="fechaF" name="fechaF">
+        <br>
+        <a href="#" class="modalA__close">Cancelar</a>
+        <a href="#" class="modalA__close1">Guardar</a>
+        </form>
+      </div>
+  </section>
+
+  <script src="{% static 'js/main_prod.js' %}"></script>
+</body>
+</html>

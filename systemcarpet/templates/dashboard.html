@@ -1,0 +1,286 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--meta tags-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--styles
+    https://watercss.kognise.dev
+    https://tailwindcss.com/docs/installation
+    -->
+  <link rel="stylesheet" href="{% static 'css/tailwindcompiled.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <!--js-->
+  <script src="https://kit.fontawesome.com/c0aadc9be8.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!--SEO-->
+  <title>Document</title>
+  <!-- utils
+      https://moqups.com/es/templates/wireframes-mockups/ecommerce-wireframe/
+  -->
+</head>
+
+<body>
+  <div class="min-h-screen bg-gray-300">
+      <header class="sticky top-0 flex items-center justify-center bg-gray-100">
+        <nav class="w-full">
+          <div class=" flex lg:items-center justify-between m-4">
+            <a href="{% url 'index' %}">
+              <p class="text-sm font-light uppercase mx-4">
+                Autocarpet S.A.S
+                <span class="block text-base font-bold tracking-widest">
+                  System
+                </span>
+              </p>
+            </a>
+            <ul class="flex items-center">
+              <li>
+                <a href="#" class="font-sans text-sm font-semibold tracking-wider text-gray-800">
+                  Javier Andres villabon Morales
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+          <div class="grid grid-cols-4 h-screen">
+            <div class="flex bg-gray-100 col-span-1 row-span-4 rounded-md mt-4">
+              <ul class="flex w-full flex-col">
+                <li class=" p-4">
+                  <a href="#" class="">
+                    <div class=" hidden md:block">
+                      <img class="" src="{% static 'images/imgs/autocarpet_logo.png' %}" alt="">
+                    </div>
+                  </a>
+                  
+                </li>
+                <li class="px-4 my-2">
+                  <a href="{% url 'dashboard_prod' %}" class=" py-2 flex  rounded-lg bg-gray-100  text-gray-600">
+                    <span class=" text-lg text-gray-400 fa-solid fa-house-chimney-user">
+                    </span>
+                    <span class="ml-3">Dashboard</span>
+                    <span
+                      class="ml-auto flex h-6 items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-semibold text-gray-500">3</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <span class=" font-medium uppercase  text-gray-400">Projects</span>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class="text-blue-500">
+                      <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Buscar</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class="text-blue-500">
+                      <i class="fa-solid fa-boxes-packing text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Productos</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class=" text-blue-500">
+                      <i class="fa-solid fa-list text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Categorias</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class=" text-yellow-500">
+                      <i class="fa-solid fa-percent text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Descuentos</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class=" text-green-400">
+                      <i class="fa-solid fa-plus text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Add new</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2 ">
+                  <span class="my-4 flex text-sm font-medium uppercase text-gray-400">Account</span>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="#" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class=" text-orange-500">
+                      <i class="fa-regular fa-bell text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Notifications</span>
+                    <span
+                      class="ml-auto flex h-6 items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-semibold text-gray-500">10</span>
+                  </a>
+                </li>
+                <li class="px-4 my-2">
+                  <a href="app/template/form/login.html" class="flex  rounded-lg  text-gray-600 hover:bg-gray-100">
+                    <span class=" text-red-500">
+                      <i class="fa-solid fa-lock-open text-2xl"></i>
+                    </span>
+                    <span class="ml-3">Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex col-span-3 gap-4 my-4 mx-4">
+              <div class="flex items-center  bg-gray-50 rounded-md shadow-sm grow">
+                <div class="mx-4 text-4xl p-5 bg-green-700 bg-opacity-75 rounded-full">
+                  <span class="fa-solid fa-basket-shopping  text-white"></span>
+                </div>
+                <div class="mx-5 grow">
+                  <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+                  <div class="text-gray-500"> total ventas</div>
+                </div>
+                <div class="flex flex-col grow"><p class="text-gray-500">ultima ventas realizadas</p>
+                <ul>
+                  <li>tapete pvc</li>
+                  <li>viper</li>
+                  
+                </ul>
+                </div>
+              </div>
+              <div class="flex items-center  bg-gray-50 rounded-md shadow-sm grow">
+                <div class="mx-4 text-4xl p-5 bg-purple-700 bg-opacity-75 rounded-full">
+                  <span class="fa-solid fa-cubes  text-white"></span>
+                </div>
+                <div class="mx-5 grow">
+                  <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+                  <div class="text-gray-500">cantidad ordenes a entregar hoy</div>
+                </div>
+                
+              </div>
+              <div class="flex items-center  bg-gray-50 rounded-md shadow-sm grow">
+                <div class="mx-4 text-4xl p-5 bg-pink-700 bg-opacity-75 rounded-full">
+                  <span class="fa-solid fa-tape  text-white"></span>
+                </div>
+                <div class="mx-5 grow">
+                  <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+                  <div class="text-gray-500"> total productos agregados al inventario</div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-span-3 row-span-3 shadow overflow-hidden rounded border-b border-gray-200 mx-4 bg-white">
+              <table class="">
+                <thead class="">
+                  <tr>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      id_producto</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      imagen</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      nombre_procto</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      estado</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      categoria</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      descuento</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      tipo</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      stock_inventario</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle">
+                      precio</th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle"></th>
+                    <th class="text-gray-500 uppercase bg-gray-50 text-center align-middle"></th>
+                  </tr>
+                </thead>
+
+                <tbody class="bg-gray-50">
+                  <tr class="">
+                    <td class="align-middle">
+                      <div class="">
+                        <p>01</p>
+                      </div>
+                    </td>
+                    <td class="align-middle flex justify-center">
+                      <img class="" src="{% static 'images/imgs/deluxe.png' %}" alt="">
+
+                    </td>
+                    <td class="align-middle">tapete pvc</td>
+                    <td class="align-middle">
+                      <button class="hover:bg-green-600 bg-green-600 font-bold text-white">
+                        disponible
+                        
+                      </button>
+                    </td>
+                    <td class="align-middle">
+                      Viper
+                    </td>
+                    <td class="align-middle text-green-600 font-bold">
+                      55%
+                    </td>
+                    <td class="align-middle">
+                      Tapete baul
+                    </td>
+                    <td class="align-middle">
+                      <button class="hover:bg-orange-500 bg-orange-500 font-bold text-white">
+                        15
+                        
+                      </button>
+                    </td>
+                    <td class="align-middle font-bold">
+                      250.000
+                    </td>
+                    <td class="align-middle">
+                      <button class="hover:bg-green-600 bg-green-700 font-bold text-white">Editar</button>
+                    </td>
+                    <td class="align-middle">
+                      <button class="hover:bg-red-700 bg-red-500 font-bold text-white">Eliminar</button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+            <nav class="col-start-2 mx-4">
+              <ul class="inline-flex -space-x-px">
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  ml-0 rounded-l-lg leading-tight py-2 px-3 ">Previous</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  leading-tight py-2 px-3 ">1</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  leading-tight py-2 px-3 ">2</a>
+                </li>
+                <li>
+                  <a href="#" aria-current="page"
+                    class="bg-blue-50 border border-gray-300 text-blue-600 hover:bg-blue-100 hover:text-blue-700  py-2 px-3 ">3</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  leading-tight py-2 px-3 ">4</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  leading-tight py-2 px-3 ">5</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100  rounded-r-lg leading-tight py-2 px-3 ">Next</a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+      </main>
+  
+  </div>
+</body>
+
+</html>
