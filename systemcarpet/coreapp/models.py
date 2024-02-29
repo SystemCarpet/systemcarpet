@@ -26,6 +26,7 @@ class Articulos(models.Model):
         verbose_name = 'Articulo' # Cuando se registre la BD en Django
         verbose_name_plural = 'Articulos'
         db_table = 'articulos' # Nombre de la tabla
+        ordering = ['id_articulo']
 
 
 class Barrios(models.Model):
@@ -41,6 +42,7 @@ class Barrios(models.Model):
         verbose_name = 'Barrio' # Cuando se registre la BD en Django
         verbose_name_plural = 'Barrios'
         db_table = 'barrios' # Nombre de la tabla
+        ordering = ['id_barrio']
 
 
 class Categorias(models.Model):
@@ -56,6 +58,7 @@ class Categorias(models.Model):
         verbose_name = 'Categoria' # Cuando se registre la BD en Django
         verbose_name_plural = 'Categorias'
         db_table = 'categorias' # Nombre de la tabla
+        ordering = ['id_categoria']
 
 
 class Colores(models.Model):
@@ -70,7 +73,7 @@ class Colores(models.Model):
         verbose_name = 'Color' # Cuando se registre la BD en Django
         verbose_name_plural = 'Colores'
         db_table = 'colores' # Nombre de la tabla
-
+        ordering = ['id_color']
 
 class DetallePedido(models.Model):
     id_detalle_pedido = models.AutoField(primary_key=True)
@@ -94,7 +97,7 @@ class Direcciones(models.Model):
     barrio = models.ForeignKey(Barrios, models.DO_NOTHING)
 
     def __str__(self):
-        return self.id_direccion
+        return self.detalles
 
     class Meta:
         verbose_name = 'Direccion' # Cuando se registre la BD en Django
