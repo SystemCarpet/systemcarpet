@@ -18,9 +18,14 @@ class Articulos(models.Model):
     descripcion_articulo = models.CharField(max_length=100, blank=True, null=True)
     precio_articulo = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
 
+    # Método to string
+    def __str__(self):
+        return self.nombre_articulo
+
     class Meta:
-        managed = False
-        db_table = 'articulos'
+        verbose_name = 'Articulo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Articulos'
+        db_table = 'articulos' # Nombre de la tabla
 
 
 class Barrios(models.Model):
@@ -28,9 +33,14 @@ class Barrios(models.Model):
     nombre_barrio = models.CharField(unique=True, max_length=30)
     localidad = models.ForeignKey('Localidades', models.DO_NOTHING)
 
+        # Método to string
+    def __str__(self):
+        return self.nombre_barrio
+
     class Meta:
-        managed = False
-        db_table = 'barrios'
+        verbose_name = 'Barrio' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Barrios'
+        db_table = 'barrios' # Nombre de la tabla
 
 
 class Categorias(models.Model):
@@ -38,18 +48,28 @@ class Categorias(models.Model):
     nombre_categoria = models.CharField(unique=True, max_length=30)
     descuento_categoria = models.IntegerField()
 
+        # Método to string
+    def __str__(self):
+        return self.nombre_categoria
+
     class Meta:
-        managed = False
-        db_table = 'categorias'
+        verbose_name = 'Categoria' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Categorias'
+        db_table = 'categorias' # Nombre de la tabla
 
 
 class Colores(models.Model):
     id_color = models.AutoField(primary_key=True)
     nombre_color = models.CharField(unique=True, max_length=30)
 
+        # Método to string
+    def __str__(self):
+        return self.nombre_color
+
     class Meta:
-        managed = False
-        db_table = 'colores'
+        verbose_name = 'Color' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Colores'
+        db_table = 'colores' # Nombre de la tabla
 
 
 class DetallePedido(models.Model):
@@ -58,9 +78,14 @@ class DetallePedido(models.Model):
     pedido = models.ForeignKey('Pedidos', models.DO_NOTHING)
     cantidad_solicitada = models.IntegerField()
 
+        # Método to string
+    def __str__(self):
+        return self.id_detalle_pedido
+
     class Meta:
-        managed = False
-        db_table = 'detalle_pedido'
+        verbose_name = 'Detalle pedido' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Detalle pedidos'
+        db_table = 'detalle_pedido' # Nombre de la tabla
 
 
 class Direcciones(models.Model):
@@ -68,9 +93,14 @@ class Direcciones(models.Model):
     detalles = models.CharField(max_length=100)
     barrio = models.ForeignKey(Barrios, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.id_direccion
+
     class Meta:
-        managed = False
-        db_table = 'direcciones'
+        verbose_name = 'Direccion' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Direcciones'
+        db_table = 'direccion' # Nombre de la tabla
+
 
 class EntregaMateriales(models.Model):
     id_entrega_material = models.AutoField(primary_key=True)
@@ -78,36 +108,55 @@ class EntregaMateriales(models.Model):
     cantidad_entrega_material = models.IntegerField()
     proveedor = models.ForeignKey('Proveedores', models.DO_NOTHING)
 
+    def __str__(self):
+        return self.id_entrega_material
+
     class Meta:
-        managed = False
-        db_table = 'entrega_materiales'
+        verbose_name = 'Entrega material' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Entregas materiales'
+        db_table = 'entrega_materiales' # Nombre de la tabla
+
 
 
 class EntregasArticulos(models.Model):
     articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
     entrega_material = models.ForeignKey(EntregaMateriales, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.articulo
+
     class Meta:
-        managed = False
-        db_table = 'entregas_articulos'
+        verbose_name = 'Entrega articulo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Entregas articulos'
+        db_table = 'entregas_articulos' # Nombre de la tabla
+
 
 
 class EstadoPedido(models.Model):
     id_estado_pedido = models.AutoField(primary_key=True)
     nombre_estado_pedido = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_estado_pedido
+
     class Meta:
-        managed = False
-        db_table = 'estado_pedido'
+        verbose_name = 'Estado pedido' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Estado pedidos'
+        db_table = 'estado_pedido' # Nombre de la tabla
+
 
 
 class EstadosArticulos(models.Model):
     id_estado_articulo = models.AutoField(primary_key=True)
     nombre_estado_articulo = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_estado_articulo
+
     class Meta:
-        managed = False
-        db_table = 'estados_articulos'
+        verbose_name = 'Estado articulo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Estado articulos'
+        db_table = 'estados_articulos' # Nombre de la tabla
 
 
 class Estampados(models.Model):
@@ -115,45 +164,52 @@ class Estampados(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     imagen_url = models.TextField(unique=True)
 
-    class Meta:
-        managed = False
-        db_table = 'estampados'
-
-
-class Localidad(models.Model):
-    id_localidad = models.AutoField(primary_key=True)
-    nombre_localidad = models.CharField(unique=True, max_length=30)
+    def __str__(self):
+        return self.nombre
 
     class Meta:
-        managed = False
-        db_table = 'localidad'
+        verbose_name = 'Estampado' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Estampados'
+        db_table = 'estampados' # Nombre de la tabla
 
 
 class Localidades(models.Model):
     id_localidad = models.AutoField(primary_key=True)
     nombre_localidad = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_localidad
+
     class Meta:
-        managed = False
-        db_table = 'localidades'
+        verbose_name = 'Localidad' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Localidades'
+        db_table = 'localidades' # Nombre de la tabla
 
 
 class MarcasVehiculos(models.Model):
     id_marca_vehiculo = models.AutoField(primary_key=True)
     nombre_marca_vehiculo = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_marca_vehiculo
+
     class Meta:
-        managed = False
-        db_table = 'marcas_vehiculos'
+        verbose_name = 'Marca vehiculo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Marcas vehiculos'
+        db_table = 'marcas_vehiculos' # Nombre de la tabla
 
 
 class MaterialesOrdenPersonalizada(models.Model):
     articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
     orden_personalizada = models.ForeignKey('OrdenPersonalizada', models.DO_NOTHING)
 
+    def __str__(self):
+        return self.articulo
+
     class Meta:
-        managed = False
-        db_table = 'materiales_orden_personalizada'
+        verbose_name = 'Material orden personalizada' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Materiales orden personalizadas'
+        db_table = 'materiales_orden_personalizada' # Nombre de la tabla
 
 
 class MetodoEntrega(models.Model):
@@ -161,18 +217,26 @@ class MetodoEntrega(models.Model):
     nombre_metodo_entrega = models.CharField(unique=True, max_length=30)
     costo_metodo_entrega = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
 
+    def __str__(self):
+        return self.nombre_metodo_entrega
+
     class Meta:
-        managed = False
-        db_table = 'metodo_entrega'
+        verbose_name = 'Metodo entrega' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Metodos de entregas'
+        db_table = 'metodo_entrega' # Nombre de la tabla
 
 
 class MetodoPago(models.Model):
     id_metodo_pago = models.AutoField(primary_key=True)
     nombre_metodo_pago = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_metodo_pago
+
     class Meta:
-        managed = False
-        db_table = 'metodo_pago'
+        verbose_name = 'Metodo pago' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Metodos de pagos'
+        db_table = 'metodo_pago' # Nombre de la tabla
 
 
 class ModelosVehiculos(models.Model):
