@@ -16,4 +16,5 @@ class UsersAdmin(admin.ModelAdmin):
     list_editable = ('email',)
     search_fields = ('nombres_usuario',)
     list_filter = ('email',)
+    list_max_show_all = 10
     list_per_page = 10
