@@ -246,9 +246,13 @@ class ModelosVehiculos(models.Model):
     marca_vehiculo = models.ForeignKey(MarcasVehiculos, models.DO_NOTHING)
     tipo_vehiculo = models.ForeignKey('TiposVehiculos', models.DO_NOTHING)
 
+    def __str__(self):
+        return self.nombre_modelo_vehiculo
+
     class Meta:
-        managed = False
-        db_table = 'modelos_vehiculos'
+        verbose_name = 'modelo vehiculo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Modelos vehiculos'
+        db_table = 'modelos_vehiculos' # Nombre de la tabla
 
 
 class OrdenPersonalizada(models.Model):
@@ -262,9 +266,13 @@ class OrdenPersonalizada(models.Model):
     estampado = models.ForeignKey(Estampados, models.DO_NOTHING)
     color_borde = models.ForeignKey(Colores, models.DO_NOTHING, related_name='ordenpersonalizada_color_borde_set')
 
+    def __str__(self):
+        return self.id_orden_personalizada
+
     class Meta:
-        managed = False
-        db_table = 'orden_personalizada'
+        verbose_name = 'Orden Personalizada' # Cuando se registre la BD en Django
+        verbose_name_plural = 'Ordenes personalizadas'
+        db_table = 'orden_personalizada' # Nombre de la tabla
 
 
 class Pedidos(models.Model):
@@ -277,9 +285,13 @@ class Pedidos(models.Model):
     metodo_pago = models.ForeignKey(MetodoPago, models.DO_NOTHING)
     estado_pedido = models.ForeignKey(EstadoPedido, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.id_pedido
+
     class Meta:
-        managed = False
-        db_table = 'pedidos'
+        verbose_name = 'pedido' # Cuando se registre la BD en Django
+        verbose_name_plural = 'pedidos'
+        db_table = 'pedidos' # Nombre de la tabla
 
 
 class PreciosProveedor(models.Model):
@@ -288,9 +300,13 @@ class PreciosProveedor(models.Model):
     articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
     proveedor = models.ForeignKey('Proveedores', models.DO_NOTHING)
 
+    def __str__(self):
+        return self.id_precio_proveedor
+
     class Meta:
-        managed = False
-        db_table = 'precios_proveedor'
+        verbose_name = 'precio proveedor' # Cuando se registre la BD en Django
+        verbose_name_plural = 'precios proveedores'
+        db_table = 'precios_proveedor' # Nombre de la tabla
 
 
 class Productos(models.Model):
@@ -300,9 +316,13 @@ class Productos(models.Model):
     categoria = models.ForeignKey(Categorias, models.DO_NOTHING)
     modelo_vehiculo = models.ForeignKey(ModelosVehiculos, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.id_producto
+
     class Meta:
-        managed = False
-        db_table = 'productos'
+        verbose_name = 'producto' # Cuando se registre la BD en Django
+        verbose_name_plural = 'productos'
+        db_table = 'productos' # Nombre de la tabla
 
 
 class Proveedores(models.Model):
@@ -312,27 +332,39 @@ class Proveedores(models.Model):
     email_proveedor = models.CharField(unique=True, max_length=60)
     direccion = models.ForeignKey(Direcciones, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.nombre_proveedor
+
     class Meta:
-        managed = False
-        db_table = 'proveedores'
+        verbose_name = 'proveedor' # Cuando se registre la BD en Django
+        verbose_name_plural = 'proveedores'
+        db_table = 'proveedores' # Nombre de la tabla
 
 
 class TiposArticulos(models.Model):
     id_tipo_articulo = models.AutoField(primary_key=True)
     nombre_tipo_articulo = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_tipo_articulo
+
     class Meta:
-        managed = False
-        db_table = 'tipos_articulos'
+        verbose_name = 'tipo articulo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'tipos articulos'
+        db_table = 'tipos_articulos' # Nombre de la tabla
 
 
 class TiposVehiculos(models.Model):
     id_tipo_vehiculo = models.AutoField(primary_key=True)
     nombre_tipo_vehiculo = models.CharField(unique=True, max_length=30)
 
+    def __str__(self):
+        return self.nombre_tipo_vehiculo
+
     class Meta:
-        managed = False
-        db_table = 'tipos_vehiculos'
+        verbose_name = 'tipo vehiculo' # Cuando se registre la BD en Django
+        verbose_name_plural = 'tipos vehiculos'
+        db_table = 'tipos_vehiculos' # Nombre de la tabla
 
 
 class Usuarios(models.Model):
@@ -344,6 +376,10 @@ class Usuarios(models.Model):
     telefono = models.CharField(unique=True, max_length=10)
     direccion = models.ForeignKey(Direcciones, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.nombres_usuario
+
     class Meta:
-        managed = False
-        db_table = 'usuarios'
+        verbose_name = 'usuario' # Cuando se registre la BD en Django
+        verbose_name_plural = 'usuarios'
+        db_table = 'usuarios' # Nombre de la tabla
