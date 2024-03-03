@@ -4,10 +4,14 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls,name='admin:index'),
     path('', views.index, name='index'),
-    path('cart.html', views.cart, name='cart'),
     path('login.html', views.login, name='login'),
+
+
+
+
+    path('cart.html', views.cart, name='cart'),
     path('products.html', views.products, name='products'),
     path('product_detail.html', views.product_detail, name='product_detail'),
     path('signup.html', views.signup, name='signup'),

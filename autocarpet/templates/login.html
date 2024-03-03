@@ -61,7 +61,7 @@
                 <li class="mx-1"><a href="#">Nosotros</a></li>
                 <li class="mx-1"><a href="products.html">Productos</a></li>
                 <li class="mx-1"><a href="#">Personalización</a></li>
-                
+
                 <li class="mx-1">
                   <a href="cart.html" class="">
                     compras
@@ -82,13 +82,15 @@
                 <div class="m-5 h-min">
                   <h1 class="text-xl font-semibold">Bienvenido de nuevo</h1>
                   <small class="">Por favor ingrese sus datos</small>
-                  <form class="mt-4">
+                  <form class="mt-4" method="post">
+                    {% csrf_token %}
                     <div class="mb-3 flex">
                       <input
                         id="login-email"
                         type="email"
                         placeholder="Email"
                         class="block w-full rounded-md"
+                        name="username"
                       />
                     </div>
                     <div class="mb-3 flex">
@@ -96,6 +98,7 @@
                         type="password"
                         placeholder="Contraseña"
                         class="block w-full rounded-md border"
+                        name="password"
                       />
                     </div>
                     <div class="mb-3 flex items-center">
