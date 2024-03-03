@@ -12,8 +12,8 @@ class Articulos(models.Model):
     id_articulo = models.AutoField(primary_key=True)
     nombre_articulo = models.CharField(unique=True, max_length=30)
     cantidad_articulo = models.IntegerField()
-    estado_articulo = models.ForeignKey('EstadosArticulos', models.DO_NOTHING)
-    tipo_articulo = models.ForeignKey('TiposArticulos', models.DO_NOTHING)
+    estado_articulo = models.ForeignKey('EstadosArticulos', models.CASCADE)
+    tipo_articulo = models.ForeignKey('TiposArticulos', models.CASCADE)
     dimensiones_articulo = models.CharField(max_length=30, blank=True, null=True)
     descripcion_articulo = models.CharField(max_length=100, blank=True, null=True)
     precio_articulo = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
@@ -32,7 +32,7 @@ class Articulos(models.Model):
 class Barrios(models.Model):
     id_barrio = models.AutoField(primary_key=True)
     nombre_barrio = models.CharField(unique=True, max_length=30)
-    localidad = models.ForeignKey('Localidades', models.DO_NOTHING)
+    localidad = models.ForeignKey('Localidades', models.CASCADE)
 
         # Método to string
     def __str__(self):
@@ -77,8 +77,8 @@ class Colores(models.Model):
 
 class DetallePedido(models.Model):
     id_detalle_pedido = models.AutoField(primary_key=True)
-    producto = models.ForeignKey('Productos', models.DO_NOTHING)
-    pedido = models.ForeignKey('Pedidos', models.DO_NOTHING)
+    producto = models.ForeignKey('Productos', models.CASCADE)
+    pedido = models.ForeignKey('Pedidos', models.CASCADE)
     cantidad_solicitada = models.IntegerField()
 
         # Método to string
@@ -94,7 +94,7 @@ class DetallePedido(models.Model):
 class Direcciones(models.Model):
     id_direccion = models.AutoField(primary_key=True)
     detalles = models.CharField(max_length=100)
-    barrio = models.ForeignKey(Barrios, models.DO_NOTHING)
+    barrio = models.ForeignKey(Barrios, models.CASCADE)
 
     def __str__(self):
         return self.detalles
@@ -109,7 +109,7 @@ class EntregaMateriales(models.Model):
     id_entrega_material = models.AutoField(primary_key=True)
     fecha_entrega_material = models.DateTimeField()
     cantidad_entrega_material = models.IntegerField()
-    proveedor = models.ForeignKey('Proveedores', models.DO_NOTHING)
+    proveedor = models.ForeignKey('Proveedores', models.CASCADE)
 
     def __str__(self):
         return self.id_entrega_material
@@ -122,8 +122,8 @@ class EntregaMateriales(models.Model):
 
 
 class EntregasArticulos(models.Model):
-    articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
-    entrega_material = models.ForeignKey(EntregaMateriales, models.DO_NOTHING)
+    articulo = models.ForeignKey(Articulos, models.CASCADE)
+    entrega_material = models.ForeignKey(EntregaMateriales, models.CASCADE)
 
     def __str__(self):
         return self.articulo
@@ -203,8 +203,8 @@ class MarcasVehiculos(models.Model):
 
 
 class MaterialesOrdenPersonalizada(models.Model):
-    articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
-    orden_personalizada = models.ForeignKey('OrdenPersonalizada', models.DO_NOTHING)
+    articulo = models.ForeignKey(Articulos, models.CASCADE)
+    orden_personalizada = models.ForeignKey('OrdenPersonalizada', models.CASCADE)
 
     def __str__(self):
         return self.articulo
@@ -246,8 +246,8 @@ class ModelosVehiculos(models.Model):
     id_modelo_vehiculo = models.AutoField(primary_key=True)
     nombre_modelo_vehiculo = models.CharField(unique=True, max_length=30)
     numero_modelo_vehiculo = models.IntegerField()
-    marca_vehiculo = models.ForeignKey(MarcasVehiculos, models.DO_NOTHING)
-    tipo_vehiculo = models.ForeignKey('TiposVehiculos', models.DO_NOTHING)
+    marca_vehiculo = models.ForeignKey(MarcasVehiculos, models.CASCADE)
+    tipo_vehiculo = models.ForeignKey('TiposVehiculos', models.CASCADE)
 
     def __str__(self):
         return self.nombre_modelo_vehiculo
@@ -263,11 +263,11 @@ class OrdenPersonalizada(models.Model):
     fecha_creacion_orden_personalizada = models.DateTimeField()
     base_antideslizante = models.BooleanField()
     impermeable = models.BooleanField()
-    usuario = models.ForeignKey('Usuarios', models.DO_NOTHING)
-    producto = models.ForeignKey('Productos', models.DO_NOTHING)
-    color = models.ForeignKey(Colores, models.DO_NOTHING)
-    estampado = models.ForeignKey(Estampados, models.DO_NOTHING)
-    color_borde = models.ForeignKey(Colores, models.DO_NOTHING, related_name='ordenpersonalizada_color_borde_set')
+    usuario = models.ForeignKey('Usuarios', models.CASCADE)
+    producto = models.ForeignKey('Productos', models.CASCADE)
+    color = models.ForeignKey(Colores, models.CASCADE)
+    estampado = models.ForeignKey(Estampados, models.CASCADE)
+    color_borde = models.ForeignKey(Colores, models.CASCADE, related_name='ordenpersonalizada_color_borde_set')
 
     def __str__(self):
         return self.id_orden_personalizada
@@ -283,10 +283,10 @@ class Pedidos(models.Model):
     fecha_entrega_pedido = models.TimeField()
     precio_total_pedido = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
     fecha_pago_pedido = models.DateTimeField()
-    usuario = models.ForeignKey('Usuarios', models.DO_NOTHING)
-    metodo_entrega = models.ForeignKey(MetodoEntrega, models.DO_NOTHING)
-    metodo_pago = models.ForeignKey(MetodoPago, models.DO_NOTHING)
-    estado_pedido = models.ForeignKey(EstadoPedido, models.DO_NOTHING)
+    usuario = models.ForeignKey('Usuarios', models.CASCADE)
+    metodo_entrega = models.ForeignKey(MetodoEntrega, models.CASCADE)
+    metodo_pago = models.ForeignKey(MetodoPago, models.CASCADE)
+    estado_pedido = models.ForeignKey(EstadoPedido, models.CASCADE)
 
     def __str__(self):
         return self.id_pedido
@@ -300,8 +300,8 @@ class Pedidos(models.Model):
 class PreciosProveedor(models.Model):
     id_precio_proveedor = models.AutoField(primary_key=True)
     precio_proveedor = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
-    articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
-    proveedor = models.ForeignKey('Proveedores', models.DO_NOTHING)
+    articulo = models.ForeignKey(Articulos, models.CASCADE)
+    proveedor = models.ForeignKey('Proveedores', models.CASCADE)
 
     def __str__(self):
         return self.id_precio_proveedor
@@ -315,9 +315,9 @@ class PreciosProveedor(models.Model):
 class Productos(models.Model):
     id_producto = models.AutoField(primary_key=True)
     imagen_producto = models.TextField(unique=True)
-    articulo = models.ForeignKey(Articulos, models.DO_NOTHING)
-    categoria = models.ForeignKey(Categorias, models.DO_NOTHING)
-    modelo_vehiculo = models.ForeignKey(ModelosVehiculos, models.DO_NOTHING)
+    articulo = models.ForeignKey(Articulos, models.CASCADE)
+    categoria = models.ForeignKey(Categorias, models.CASCADE)
+    modelo_vehiculo = models.ForeignKey(ModelosVehiculos, models.CASCADE)
 
     def __str__(self):
         return self.id_producto
@@ -333,7 +333,7 @@ class Proveedores(models.Model):
     nombre_proveedor = models.CharField(unique=True, max_length=30)
     telefono_proveedor = models.CharField(unique=True, max_length=10)
     email_proveedor = models.CharField(unique=True, max_length=60)
-    direccion = models.ForeignKey(Direcciones, models.DO_NOTHING)
+    direccion = models.ForeignKey(Direcciones, models.CASCADE)
 
     def __str__(self):
         return self.nombre_proveedor
@@ -377,7 +377,7 @@ class Usuarios(models.Model):
     contrasenia = models.CharField(max_length=30)
     email = models.CharField(unique=True, max_length=60)
     telefono = models.CharField(unique=True, max_length=10)
-    direccion = models.ForeignKey(Direcciones, models.DO_NOTHING)
+    direccion = models.ForeignKey(Direcciones, models.CASCADE)
 
     def __str__(self):
         return self.nombres_usuario
