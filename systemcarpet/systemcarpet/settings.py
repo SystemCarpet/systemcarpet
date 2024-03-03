@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'systemcarpet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = db.MYSQL
+DATABASES = db.POSTGRESQL
 
 
 # Password validation
