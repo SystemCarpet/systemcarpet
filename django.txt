@@ -11,3 +11,4 @@ python -m pip install pymysql
 python -m pip install "psycopg[binary]"
 python .\systemcarpet\systemcarpet\manage.py runserver
 python manage.py inspectdb > .\coreapp\models.py
+python manage.py createsuperuser
